@@ -43,7 +43,7 @@ Leave a value as `""` and the site shows a polite "to be added" message instead.
    - `src`, `width`, `height` and `alt` on the `<img>`
    - optional `data-featured="1"` to prefer it in the 5-photo preview
 3. **Service cards**: in the `svcTrack` slider, change the `<img src>` inside a card.
-4. Add new pages or big images to `CORE_ASSETS` in `sw.js` only if they must work offline, and bump `CACHE_NAME` (e.g. `v5` → `v6`) whenever you change files, so returning visitors get the update.
+4. Add new pages or big images to `CORE_ASSETS` in `sw.js` only if they must work offline. When you change CSS or JS, bump the `?v=` number on their `<link>`/`<script>` tags in every page and `CACHE_NAME` in `sw.js`.
 
 ## Editing text and translations
 

@@ -1,9 +1,13 @@
-// Offline support. Pages: network first, so customers always see the latest
-// details, falling back to the saved copy (or offline.html) with no signal.
-// Static files (CSS, JS, images, language packs): cache first, refreshed in the background.
-// Paths are relative to this file, so the site works on GitHub Pages' /sakthi-tailor/ path or a custom domain.
+// Offline support.
+// - Pages, CSS, JS and language packs: network first, so every update is
+//   seen straight away; the saved copy is only used when there's no signal.
+// - Images: cache first (they never change in place; new photos get new names).
+// Cache keys ignore the query string, so ?lang=ta, ?service=... and the
+// ?v= asset versions all map to one saved copy.
+// Paths are relative to this file, so the site works on GitHub Pages'
+// /sakthi-tailor/ path or on a custom domain.
 
-const CACHE_NAME = "sakthi-tailor-v7";
+const CACHE_NAME = "sakthi-tailor-v8";
 const CORE_ASSETS = [
   "./",
   "index.html",
@@ -44,34 +48,37 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
+function keyFor(url) {
+  return url.origin + url.pathname;
+}
+
+function save(key, res) {
+  if (res.ok) {
+    const copy = res.clone();
+    caches.open(CACHE_NAME).then((c) => c.put(key, copy));
+  }
+  return res;
+}
+
 self.addEventListener("fetch", (event) => {
   const req = event.request;
   if (req.method !== "GET") return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return; // never touch Google, WhatsApp, etc.
+  const key = keyFor(url);
 
-  if (req.mode === "navigate") {
-    // Pages are stored by path only, so ?lang=ta or ?service=Training still open offline
-    const key = url.origin + url.pathname;
+  if (req.destination === "image") {
     event.respondWith(
-      fetch(req)
-        .then((res) => {
-          const copy = res.clone();
-          if (res.ok) caches.open(CACHE_NAME).then((c) => c.put(key, copy));
-          return res;
-        })
-        .catch(() => caches.match(key).then((hit) => hit || caches.match("offline.html")))
+      caches.match(key).then((hit) => hit || fetch(req).then((res) => save(key, res)))
     );
     return;
   }
 
   event.respondWith(
-    caches.match(req).then((hit) => {
-      const network = fetch(req).then((res) => {
-        if (res.ok) { const copy = res.clone(); caches.open(CACHE_NAME).then((c) => c.put(req, copy)); }
-        return res;
-      }).catch(() => hit);
-      return hit || network;
-    })
+    fetch(req)
+      .then((res) => save(key, res))
+      .catch(() =>
+        caches.match(key).then((hit) => hit || (req.mode === "navigate" ? caches.match("offline.html") : Response.error()))
+      )
   );
 });
