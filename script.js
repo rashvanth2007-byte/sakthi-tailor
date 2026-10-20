@@ -5,6 +5,10 @@
 (function () {
   "use strict";
 
+  // Entrance animations are only armed when this script runs, so the page
+  // stays fully visible if JavaScript is blocked.
+  document.documentElement.classList.add("js");
+
   var SITE = window.SITE || {};
   var WHATSAPP_NUMBER = SITE.whatsapp || "919789651814"; // country code + shop number, no spaces or +
   var CONSENT_KEY = "sakthi_cookie_choice";
@@ -341,7 +345,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.08 });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
 
     targets.forEach(function (t) { observer.observe(t); });
   }

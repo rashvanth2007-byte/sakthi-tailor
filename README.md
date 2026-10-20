@@ -10,6 +10,8 @@ It is a plain static site (HTML, CSS, JavaScript; no build step) hosted free on 
 - **Order on WhatsApp** — the booking form builds a ready-to-send WhatsApp message (name, phone, service, branch, date, details) in the visitor's language. Nothing is stored on a server.
 - **Two branches with Google Maps** — branch cards with directions, call and WhatsApp buttons, and a map that loads only after the visitor allows it (privacy-friendly, DPDP Act 2023-aware).
 - **Social** — Instagram, Facebook and WhatsApp links, plus a Share button (uses the phone's share sheet).
+- **Brand design** built from the shop logo: sindoor crimson, zari gold and ivory, temple-arch photo frames, kolam patterns, and a distinct entrance animation for every section (all off for reduced-motion users).
+- **"From fabric to finished blouse"** photo story, student-work albums on the Training page, and 60+ real photos of finished blouses and aari work.
 - **Services slider, photo gallery with full-screen viewer, FAQ, process steps**, a separate **Training School** page, and privacy/terms pages.
 - **Works offline** (service worker), installable on phones (web app manifest), SEO structured data (business, FAQ, course).
 - **Security** — strict Content-Security-Policy with no inline scripts, all user text escaped, sandboxed map frame.
@@ -35,7 +37,8 @@ Leave a value as `""` and the site shows a polite "to be added" message instead.
 
 1. Copy the photo into `images/` with a short lowercase name, e.g. `images/design-bridal-01.jpg`. Resize it to about 1200 px on the long side first (keeps the site fast).
 2. **Gallery**: in `index.html`, find `id="gGrid"` and copy one `<button class="g-item" …>` line. Set:
-   - `data-cat` — `shop`, `work` or `tools` (or a new category; add a matching filter chip above the grid)
+   - `data-cat` — `designs`, `aari`, `shop`, `work` or `tools` (or a new category; add a matching filter chip above the grid)
+   - Strip location data first: phone photos often contain GPS. Re-saving through an image editor or the export script removes it.
    - `data-caption` — the caption text
    - `src`, `width`, `height` and `alt` on the `<img>`
    - optional `data-featured="1"` to prefer it in the 5-photo preview
