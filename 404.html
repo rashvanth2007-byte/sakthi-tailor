@@ -3,19 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'self'">
 <title>Page not found — Sakthi Tailor & Garments</title>
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="styles.css">
+<!-- GitHub Pages serves this file for any missing URL, at any depth, so links are absolute to the site root. -->
+<link rel="icon" href="/sakthi-tailor/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Work+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="/sakthi-tailor/styles.css">
 </head>
 <body class="error-page">
-  <div class="wrap">
+  <main class="wrap">
     <p class="code">404</p>
     <h1>This page doesn't exist.</h1>
-    <p style="margin: 0 auto;">The link you followed may be broken, or the page may have moved. Here's where you can go instead:</p>
-    <div class="cta-row" style="justify-content:center; margin-top:28px;">
-      <a href="/" class="btn btn-primary">Go to homepage</a>
-      <a href="/training.html" class="btn btn-secondary">Training School</a>
+    <p lang="ta">இந்தப் பக்கம் கிடைக்கவில்லை.</p>
+    <p>The link may be broken or the page may have moved. Here's where you can go instead:</p>
+    <div class="cta-row">
+      <a href="/sakthi-tailor/" class="btn btn-ink">Go to homepage</a>
+      <a href="/sakthi-tailor/training.html" class="btn btn-outline">Training School</a>
+      <a href="https://wa.me/919789651814" class="btn btn-wa" rel="noopener noreferrer">WhatsApp us</a>
     </div>
-  </div>
+  </main>
 </body>
 </html>

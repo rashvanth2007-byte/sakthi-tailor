@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.sakthitailor.in/sitemap.xml
+Sitemap: https://rashvanth2007-byte.github.io/sakthi-tailor/sitemap.xml
