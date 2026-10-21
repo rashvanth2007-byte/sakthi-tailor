@@ -311,12 +311,15 @@ html[dir="rtl"] .hero-training { background: linear-gradient(260deg, rgba(44,9,1
 .cat-sub { font-size: .95rem; color: rgba(255,255,255,.9); }
 .cat-cta { margin-top: 14px; width: fit-content; padding: 9px 18px; border-radius: 999px; font-size: .9rem; font-weight: 700; background: rgba(255,255,255,.16); border: 1px solid rgba(236,208,138,.6); transition: background .2s; }
 .cat-card:hover .cat-cta { background: var(--accent); }
-.cat-maroon { --accent: var(--sindoor); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/card-women.jpg'); background-position: center 85%; }
+.cat-maroon { --accent: var(--sindoor); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/card-women.jpg'); background-position: center 40%; }
 /* PLACEHOLDER stock photo until the shop sends its own men's-wear photo:
    "Traditional Clothing on Hanger" by viresh studio, Pexels License (free commercial use)
    https://www.pexels.com/photo/traditional-clothing-on-hanger-18016521/ */
 .cat-olive  { --accent: #5d6b2f; background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/card-men-stock.jpg'); background-position: center 30%; }
-.cat-teal   { --accent: var(--peacock); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/card-uniform.jpg'); background-position: center 40%; }
+/* PLACEHOLDER stock photo until the shop sends a photo of its own uniforms:
+   "White Shirts on the Hangers" by Pew Nguyen, Pexels License (free commercial use)
+   https://www.pexels.com/photo/white-shirts-on-the-hangers-17281873/ */
+.cat-teal   { --accent: var(--peacock); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/card-uniform-stock.jpg'); background-position: center 30%; }
 .cat-brass  { --accent: var(--zari-text); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/card-training.jpg'); background-position: center 30%; }
 @media (prefers-reduced-motion: no-preference) {
   .js #categories .cat-card { opacity: 0; translate: 0 70px; transition: opacity .7s var(--ease), translate .9s var(--ease), transform .15s ease-out, box-shadow .3s, outline-offset .3s; }

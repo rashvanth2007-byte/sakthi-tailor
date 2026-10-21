@@ -67,6 +67,7 @@ The site is published by GitHub Pages from the `main` branch root. Push to `main
 
 ## Still to fill in
 
+- Uniform Specialist card uses a **placeholder stock photo** (`images/card-uniform-stock.jpg`, "White Shirts on the Hangers" by Pew Nguyen on Pexels, free licence). Replace it with a photo of the shop's own uniforms: set the `.cat-teal` background in `styles.css`.
 - Men's Tailoring card uses a **placeholder stock photo** (`images/card-men-stock.jpg`, "Traditional Clothing on Hanger" by viresh studio on Pexels, free licence). Replace it with a photo of the shop's own men's wear: set the `.cat-olive` background in `styles.css`.
 
 - Branch addresses, hours and map locations (`config.js`)
