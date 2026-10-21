@@ -7,7 +7,7 @@
 // Paths are relative to this file, so the site works on GitHub Pages'
 // /sakthi-tailor/ path or on a custom domain.
 
-const CACHE_NAME = "sakthi-tailor-v9";
+const CACHE_NAME = "sakthi-tailor-v10";
 const CORE_ASSETS = [
   "./",
   "index.html",
@@ -35,7 +35,7 @@ const CORE_ASSETS = [
 ];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(CORE_ASSETS)));
+  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(CORE_ASSETS.map((u) => new Request(u, { cache: "reload" })))));
   self.skipWaiting();
 });
 
@@ -75,7 +75,7 @@ self.addEventListener("fetch", (event) => {
   }
 
   event.respondWith(
-    fetch(req)
+    fetch(req, { cache: "no-cache" })
       .then((res) => save(key, res))
       .catch(() =>
         caches.match(key).then((hit) => hit || (req.mode === "navigate" ? caches.match("offline.html") : Response.error()))
