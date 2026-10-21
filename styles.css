@@ -32,7 +32,11 @@
 
   --radius: 10px;
   --radius-lg: 20px;
-  --arch: 999px 999px 18px 18px;
+  /* Leaf shape: big radius on two opposite corners, like a petal or paisley.
+     Unlike an arch it keeps its character at any width (tall desktop cards
+     and wide phone cards alike). Mirrored for right-to-left pages. */
+  --leaf: 64px 14px 64px 14px;
+  --leaf-sm: 40px 10px 40px 10px;
   --shadow: 0 24px 48px -26px rgba(74, 15, 26, .55);
   --shadow-soft: 0 14px 30px -22px rgba(74, 15, 26, .45);
   --gutter: clamp(16px, 4vw, 56px);
@@ -49,6 +53,7 @@
   --paisley: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cpath d='M58 112c-22-4-34-26-24-46 9-18 34-24 50-12 13 10 14 30 2 40-9 8-24 6-28-4-3-8 3-16 11-15' fill='none' stroke='%23b3121f' stroke-opacity='.07' stroke-width='2'/%3E%3C/svg%3E");
 }
 
+html[dir="rtl"] { --leaf: 14px 64px 14px 64px; --leaf-sm: 10px 40px 10px 40px; }
 html[data-lang="ta"] { --font-script: 'Noto Sans Tamil'; }
 html[data-lang="te"] { --font-script: 'Noto Sans Telugu'; }
 html[data-lang="ml"] { --font-script: 'Noto Sans Malayalam'; }
@@ -237,7 +242,7 @@ html:not(:lang(en)) .hero .eyebrow { letter-spacing: .03em; text-transform: none
 .hero-art { position: relative; height: clamp(420px, 46vw, 600px); }
 .hero-card { position: absolute; margin: 0; overflow: hidden; border-radius: 18px; border: 6px solid #fff; background: var(--sand); box-shadow: 0 40px 60px -30px rgba(0,0,0,.75), 0 0 0 1px rgba(201,161,74,.6); transition: transform .6s var(--ease); }
 .hero-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hc-1 { width: 52%; height: 78%; left: 24%; top: 6%; z-index: 3; border-radius: var(--arch); }
+.hc-1 { width: 52%; height: 78%; left: 24%; top: 6%; z-index: 3; border-radius: var(--leaf); }
 .hc-2 { width: 40%; height: 58%; left: 0; top: 30%; z-index: 2; transform: rotate(-9deg); }
 .hc-3 { width: 40%; height: 58%; right: 0; top: 18%; z-index: 1; transform: rotate(8deg); }
 .hero-art:hover .hc-2 { transform: rotate(-12deg) translate(-10px, -6px); }
@@ -287,7 +292,7 @@ html[dir="rtl"] .hero-training { background: linear-gradient(260deg, rgba(44,9,1
 @keyframes sweep { from { opacity: 0; transform: translateX(-60px); } to { opacity: 1; transform: none; } }
 
 /* ===================================================================
-   3 · Categories — ivory, temple-arch cards rise one after another
+   3 · Categories — ivory, leaf-shaped cards rise one after another
    =================================================================== */
 #categories { background: var(--ivory); }
 #categories .section-head { text-align: center; margin-inline: auto; }
@@ -296,7 +301,7 @@ html[dir="rtl"] .hero-training { background: linear-gradient(260deg, rgba(44,9,1
   --accent: var(--sindoor);
   display: flex; flex-direction: column; justify-content: flex-end; gap: 6px;
   min-height: 420px; padding: 28px 24px; text-decoration: none; color: #fff;
-  border-radius: var(--arch); background-color: var(--wine); background-size: cover; background-position: center 30%;
+  border-radius: var(--leaf); background-color: var(--wine); background-size: cover; background-position: center 30%;
   box-shadow: var(--shadow); outline: 1px solid rgba(236,208,138,.55); outline-offset: -10px;
   transform-style: preserve-3d; transition: transform .15s ease-out, box-shadow .3s, outline-offset .3s;
 }
@@ -305,10 +310,10 @@ html[dir="rtl"] .hero-training { background: linear-gradient(260deg, rgba(44,9,1
 .cat-sub { font-size: .95rem; color: rgba(255,255,255,.9); }
 .cat-cta { margin-top: 14px; width: fit-content; padding: 9px 18px; border-radius: 999px; font-size: .9rem; font-weight: 700; background: rgba(255,255,255,.16); border: 1px solid rgba(236,208,138,.6); transition: background .2s; }
 .cat-card:hover .cat-cta { background: var(--accent); }
-.cat-maroon { --accent: var(--sindoor); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/design-12.jpg'); }
+.cat-maroon { --accent: var(--sindoor); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/design-12.jpg'); }
 .cat-olive  { --accent: #5d6b2f; background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/work-09.jpg'); }
 .cat-teal   { --accent: var(--peacock); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/work-10.jpg'); }
-.cat-brass  { --accent: var(--zari-text); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/train-album-1.jpg'); }
+.cat-brass  { --accent: var(--zari-text); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/train-album-1.jpg'); }
 @media (prefers-reduced-motion: no-preference) {
   .js #categories .cat-card { opacity: 0; translate: 0 70px; transition: opacity .7s var(--ease), translate .9s var(--ease), transform .15s ease-out, box-shadow .3s, outline-offset .3s; }
   .js #categories.is-visible .cat-card { opacity: 1; translate: 0 0; }
@@ -317,7 +322,7 @@ html[dir="rtl"] .hero-training { background: linear-gradient(260deg, rgba(44,9,1
   .js #categories.is-visible .cat-card:nth-child(4) { transition-delay: .36s; }
 }
 @media (max-width: 1080px) { .category-grid { grid-template-columns: 1fr 1fr; } .cat-card { min-height: 340px; } }
-@media (max-width: 560px)  { .category-grid { grid-template-columns: 1fr; } .cat-card { min-height: 280px; border-radius: 160px 160px 18px 18px; } }
+@media (max-width: 560px)  { .category-grid { grid-template-columns: 1fr; } .cat-card { min-height: 260px; border-radius: var(--leaf-sm); } }
 
 /* Chips (filters) */
 .chip-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
@@ -433,13 +438,13 @@ html[dir="rtl"] .steps::before { transform-origin: right; }
 }
 
 /* ===================================================================
-   7 · Why us — arch-framed photo; curtain wipe, then the list cascades
+   7 · Why us — leaf-framed photo; curtain wipe, then the list cascades
    =================================================================== */
 #why { background: var(--ivory); }
 .why-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(36px, 6vw, 90px); align-items: center; }
 .why-photo { position: relative; }
-.why-photo::before { content: ""; position: absolute; inset: 22px -22px -22px 22px; border: 2px solid var(--zari); border-radius: var(--arch); }
-.why-photo img { position: relative; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; border-radius: var(--arch); box-shadow: var(--shadow); }
+.why-photo::before { content: ""; position: absolute; inset: 22px -22px -22px 22px; border: 2px solid var(--zari); border-radius: var(--leaf); }
+.why-photo img { position: relative; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; border-radius: var(--leaf); box-shadow: var(--shadow); }
 .why-list { list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 6px; counter-reset: why; }
 .why-list li { position: relative; padding: 18px 0 16px 58px; border-bottom: 1px dashed var(--line); }
 .why-list li:last-child { border-bottom: 0; }
@@ -475,7 +480,7 @@ html[dir="rtl"] .why-list li::before { left: auto; right: 0; }
 .g-stage { position: relative; }
 .g-mosaic { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, clamp(160px, 18vw, 260px)); }
 .g-item { display: block; width: 100%; height: 100%; padding: 0; margin: 0; border: 0; cursor: zoom-in; background: var(--wine); border-radius: 14px; overflow: hidden; position: relative; }
-.g-item.m1 { grid-area: 1 / 1 / 3 / 3; border-radius: 240px 240px 14px 14px; }
+.g-item.m1 { grid-area: 1 / 1 / 3 / 3; border-radius: var(--leaf); }
 .g-item.m2 { grid-area: 1 / 3; } .g-item.m3 { grid-area: 1 / 4; } .g-item.m4 { grid-area: 2 / 3; } .g-item.m5 { grid-area: 2 / 4; }
 .g-item img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; transition: transform .7s var(--ease); }
 .g-item:hover img { transform: scale(1.06); }
@@ -516,7 +521,7 @@ html[dir="rtl"] .g-showall { right: auto; left: 16px; }
 @media (max-width: 900px) { .g-tour-grid { column-count: 2; } }
 @media (max-width: 640px) {
   .g-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 280px 150px; gap: 8px; }
-  .g-item.m1 { grid-area: 1 / 1 / 2 / 3; border-radius: 160px 160px 14px 14px; }
+  .g-item.m1 { grid-area: 1 / 1 / 2 / 3; border-radius: var(--leaf-sm); }
   .g-item.m2 { grid-area: 2 / 1; } .g-item.m3 { grid-area: 2 / 2; }
   .g-item.m4, .g-item.m5 { display: none; }
   .g-showall { right: 10px; bottom: 10px; padding: 9px 14px; font-size: .9rem; }
@@ -655,7 +660,7 @@ html[dir="rtl"] .faq-list summary::after { right: auto; left: 18px; }
    =================================================================== */
 #for-whom { background: var(--ivory); }
 .who-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.who-grid li { position: relative; background: #fff; border-radius: var(--arch); padding: 76px 30px 34px; text-align: center; box-shadow: var(--shadow-soft); outline: 1px dashed rgba(201,161,74,.6); outline-offset: -10px; }
+.who-grid li { position: relative; background: #fff; border-radius: var(--leaf); padding: 72px 30px 34px; text-align: center; box-shadow: var(--shadow-soft); outline: 1px dashed rgba(201,161,74,.6); outline-offset: -10px; }
 .who-grid li::before { content: ""; position: absolute; top: 28px; left: 50%; width: 34px; height: 34px; margin-left: -17px; border-radius: 50%; background: var(--sindoor); box-shadow: 0 0 0 6px var(--blush); }
 .who-grid li:nth-child(2)::before { background: var(--peacock); }
 .who-grid li:nth-child(3)::before { background: var(--zari); }
