@@ -448,11 +448,14 @@
         it.className = "g-item";
         it.setAttribute("aria-label", t("ui.photoOf", "View photo") + ": " + (it.getAttribute("data-caption") || ""));
       });
-      previewSet().forEach(function (it, i) {
+      var shown = previewSet();
+      shown.forEach(function (it, i) {
         it.hidden = false;
         it.classList.add("m" + (i + 1));
         grid.appendChild(it); // keeps keyboard order the same as the visual order
       });
+      // Filters with fewer than 5 photos stretch their tiles so the mosaic has no holes
+      grid.setAttribute("data-count", shown.length);
     }
 
     function buildTour() {
