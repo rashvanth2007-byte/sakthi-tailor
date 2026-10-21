@@ -7,7 +7,7 @@
 // Paths are relative to this file, so the site works on GitHub Pages'
 // /sakthi-tailor/ path or on a custom domain.
 
-const CACHE_NAME = "sakthi-tailor-v16";
+const CACHE_NAME = "sakthi-tailor-v17";
 const CORE_ASSETS = [
   "./",
   "index.html",
@@ -29,9 +29,9 @@ const CORE_ASSETS = [
   "lang/kn.js",
   "lang/hi.js",
   "lang/ur.js",
-  "images/aari-01.jpg",
-  "images/design-02.jpg",
-  "images/aari-02.jpg"
+  "images/sm/hero-1.jpg",
+  "images/hero-2.jpg",
+  "images/hero-3.jpg"
 ];
 
 self.addEventListener("install", (event) => {
