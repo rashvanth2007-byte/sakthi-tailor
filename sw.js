@@ -7,7 +7,7 @@
 // Paths are relative to this file, so the site works on GitHub Pages'
 // /sakthi-tailor/ path or on a custom domain.
 
-const CACHE_NAME = "sakthi-tailor-v20";
+const CACHE_NAME = "sakthi-tailor-v21";
 const CORE_ASSETS = [
   "./",
   "index.html",
