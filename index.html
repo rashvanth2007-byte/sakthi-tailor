@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com https://maps.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Sakthi Tailor & Garments — Tailoring, Uniforms & Training</title>
 <meta name="description" content="Custom blouse, chudidhar and gents stitching, school & office uniforms, tailoring classes and sewing machines. Two branches in Tamil Nadu. Order on WhatsApp.">
@@ -11,7 +11,7 @@
 <link rel="canonical" href="https://rashvanth2007-byte.github.io/sakthi-tailor/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sakthi Tailor & Garments">
-<meta property="og:title" content="Sakthi Tailor & Garments — Ladies & Gents Tailoring, Uniforms & Training">
+<meta property="og:title" content="Sakthi Tailor & Garments — Tailoring, Aari Work & Uniforms">
 <meta property="og:description" content="Custom stitching, uniform specialist, training school and sewing machine sales. Order or book on WhatsApp.">
 <meta property="og:url" content="https://rashvanth2007-byte.github.io/sakthi-tailor/">
 <meta property="og:image" content="https://rashvanth2007-byte.github.io/sakthi-tailor/images/og-share.jpg">
@@ -21,13 +21,13 @@
 <meta name="twitter:image" content="https://rashvanth2007-byte.github.io/sakthi-tailor/images/og-share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#4a0f1a">
-<link rel="icon" href="favicon.png" type="image/png">
+<link rel="icon" href="favicon.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="styles.css?v=22">
+<link rel="stylesheet" href="styles.css?v=23">
 <link rel="preload" as="image" href="images/sm/hero-1.jpg" imagesrcset="images/sm/hero-1.jpg 600w, images/hero-1.jpg 957w" imagesizes="(max-width: 900px) 55vw, 30vw">
 <script type="application/ld+json">
 {
@@ -37,11 +37,11 @@
   "name": "Sakthi Tailor & Garments",
   "alternateName": "சக்தி டைலர் & கார்மெண்ட்ஸ்",
   "url": "https://rashvanth2007-byte.github.io/sakthi-tailor/",
-  "image": "https://rashvanth2007-byte.github.io/sakthi-tailor/images/aari-01.jpg",
+  "image": "https://rashvanth2007-byte.github.io/sakthi-tailor/images/hero-1.jpg",
   "logo": "https://rashvanth2007-byte.github.io/sakthi-tailor/icon-512.png",
   "telephone": "+919789651814",
   "priceRange": "₹₹",
-  "description": "Ladies & gents tailoring, school and office uniform specialist, tailoring training school, and new & used sewing machine sales.",
+  "description": "Ladies & gents tailoring, aari and bridal work, school and office uniform specialist, tailoring training school, and new & used sewing machine sales.",
   "areaServed": "Tamil Nadu, India",
   "knowsLanguage": ["ta", "en", "te", "ml", "kn", "hi", "ur"],
   "makesOffer": [
@@ -49,6 +49,8 @@
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Chudidhar stitching"}},
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "School and office uniforms"}},
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Alterations"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Aari and bridal work"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Gents stitching"}},
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Tailoring training"}},
     {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "New and used sewing machines"}}
   ]
@@ -90,7 +92,7 @@
       <img src="logo.png" alt="" width="32" height="37">
       <span><span class="brand-name">Sakthi Tailor</span><span class="brand-sub">&amp; Garments</span></span>
     </a>
-    <nav class="nav-links" id="navLinks">
+    <nav class="nav-links" id="navLinks" data-i18n-aria="nav.mainLabel" aria-label="Main menu">
       <a href="#services" data-i18n="nav.services">Services</a>
       <a href="training.html" data-i18n="nav.training">Training School</a>
       <a href="#work" data-i18n="nav.work">Gallery</a>
@@ -118,7 +120,7 @@
       <p class="lead" data-i18n="hero.lead">Custom blouses, chudidhars, jackets, uniforms and alterations — cut and stitched in-house to your measurements. Plus a tailoring training school and new &amp; used sewing machines.</p>
       <div class="cta-row">
         <a href="#booking" class="btn btn-wa"><svg width="20" height="20" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="hero.ctaOrder">Order on WhatsApp</span></a>
-        <a href="#work" class="btn btn-ghost" data-i18n="gal.showAll">Show all photos</a>
+        <a href="#work" class="btn btn-ghost" data-i18n="hero.ctaWork">See our work</a>
       </div>
       <ul class="hero-facts">
         <li><svg width="22" height="22" aria-hidden="true"><use href="#i-phone"/></svg><div><strong class="ltr">97896 51814</strong><span data-i18n="hero.factPhone">Call or WhatsApp</span></div></li>
@@ -129,7 +131,7 @@
     <div class="hero-art" aria-hidden="true">
       <figure class="hero-card hc-1"><img src="images/hero-1.jpg" srcset="images/sm/hero-1.jpg 600w, images/hero-1.jpg 957w" sizes="(max-width: 900px) 55vw, 30vw" alt="" width="957" height="1100" fetchpriority="high"></figure>
       <figure class="hero-card hc-2"><img src="images/hero-2.jpg" alt="" width="589" height="1100"></figure>
-      <figure class="hero-card hc-3"><img src="images/hero-3.jpg" alt="" width="604" height="1100"></figure>
+      <figure class="hero-card hc-3"><img src="images/hero-3.jpg" alt="" width="555" height="1012"></figure>
       <div class="hero-seal"><img src="logo.png" alt="" width="64" height="74"><span data-i18n="hero.signature">Signature aari work</span></div>
       <svg class="hero-thread" viewBox="0 0 400 300" preserveAspectRatio="none"><path d="M10 280 C 120 180, 220 320, 390 40" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="7 6"/></svg>
     </div>
@@ -204,7 +206,7 @@
     <div class="svc-viewport">
       <div class="svc-track" id="svcTrack" role="region" tabindex="0" data-i18n-aria="svc.track" aria-label="Services, scroll sideways">
         <article class="svc-card svc-maroon" data-cat="women">
-          <div class="svc-img"><img src="images/design-02.jpg" srcset="images/sm/design-02.jpg 600w, images/design-02.jpg 825w" sizes="(max-width: 640px) 80vw, 350px" alt="" loading="lazy" width="825" height="1100"><span class="svc-tag" data-i18n="filter.women">Women</span></div>
+          <div class="svc-img"><img src="images/design-05.jpg" srcset="images/sm/design-05.jpg 600w, images/design-05.jpg 825w" sizes="(max-width: 640px) 80vw, 350px" alt="" loading="lazy" width="825" height="1100"><span class="svc-tag" data-i18n="filter.women">Women</span></div>
           <div class="svc-body">
             <h3 data-i18n="svc.blouse">Blouse Stitching</h3>
             <p data-i18n="svc.blouseDesc">Sadha, lining, princess cut, katori, boat neck, collar neck and closed neck — cut to your measurements.</p>
@@ -212,7 +214,7 @@
           </div>
         </article>
         <article class="svc-card svc-maroon" data-cat="women">
-          <div class="svc-img"><img src="images/design-12.jpg" srcset="images/sm/design-12.jpg 600w, images/design-12.jpg 1100w" sizes="(max-width: 640px) 80vw, 350px" alt="" loading="lazy" width="1100" height="824"><span class="svc-tag" data-i18n="filter.women">Women</span></div>
+          <div class="svc-img"><img src="images/design-08.jpg" srcset="images/sm/design-08.jpg 600w, images/design-08.jpg 1040w" sizes="(max-width: 640px) 80vw, 350px" alt="" loading="lazy" width="1040" height="780"><span class="svc-tag" data-i18n="filter.women">Women</span></div>
           <div class="svc-body">
             <h3 data-i18n="svc.chudi">Chudidhar &amp; Model Chudidhar</h3>
             <p data-i18n="svc.chudiDesc">Everyday and occasion chudidhars in sadha, lining and princess cut, stitched to fit.</p>
@@ -220,7 +222,7 @@
           </div>
         </article>
         <article class="svc-card svc-maroon" data-cat="women">
-          <div class="svc-img"><img src="images/aari-01.jpg" srcset="images/sm/aari-01.jpg 600w, images/aari-01.jpg 825w" sizes="(max-width: 640px) 80vw, 350px" alt="" loading="lazy" width="825" height="1100"><span class="svc-tag" data-i18n="filter.women">Women</span></div>
+          <div class="svc-img"><img src="images/aari-14.jpg" alt="" loading="lazy" width="550" height="1100"><span class="svc-tag" data-i18n="filter.women">Women</span></div>
           <div class="svc-body">
             <h3 data-i18n="svc.bridal">Bridal &amp; Aari Work</h3>
             <p data-i18n="svc.bridalDesc">Bridal model jackets, hand aari work and machine embroidery for weddings and functions.</p>
@@ -228,7 +230,7 @@
           </div>
         </article>
         <article class="svc-card svc-maroon" data-cat="women">
-          <div class="svc-img"><img src="images/work-03.jpg" srcset="images/sm/work-03.jpg 600w, images/work-03.jpg 900w" sizes="(max-width: 640px) 80vw, 350px" alt="" loading="lazy" width="900" height="1200"><span class="svc-tag" data-i18n="filter.women">Women</span></div>
+          <div class="svc-img"><img src="images/aari-13.jpg" alt="" loading="lazy" width="550" height="946"><span class="svc-tag" data-i18n="filter.women">Women</span></div>
           <div class="svc-body">
             <h3 data-i18n="svc.saree">Saree Frock, Zig-Zag &amp; Pico</h3>
             <p data-i18n="svc.sareeDesc">Full saree frock work, plus neat zig-zag and pico edging for a clean, durable finish.</p>
@@ -236,7 +238,7 @@
           </div>
         </article>
         <article class="svc-card svc-brass" data-cat="women men">
-          <div class="svc-img"><img src="images/work-04.jpg" srcset="images/sm/work-04.jpg 600w, images/work-04.jpg 900w" sizes="(max-width: 640px) 80vw, 350px" alt="" loading="lazy" width="900" height="1200"><span class="svc-tag" data-i18n="filter.all">All</span></div>
+          <div class="svc-img"><img src="images/work-12.jpg" alt="" loading="lazy" width="675" height="1200"><span class="svc-tag" data-i18n="filter.all">All</span></div>
           <div class="svc-body">
             <h3 data-i18n="svc.alter">Alterations &amp; Repairs</h3>
             <p data-i18n="svc.alterDesc">Resizing, repairs and fall-hemming for ladies' and gents' wear.</p>
@@ -244,7 +246,7 @@
           </div>
         </article>
         <article class="svc-card svc-olive" data-cat="men">
-          <div class="svc-img"><img src="images/work-09.jpg" alt="" loading="lazy" width="675" height="1200"><span class="svc-tag" data-i18n="filter.men">Men</span></div>
+          <div class="svc-img"><img src="images/sm/card-men-stock.jpg" alt="" loading="lazy" width="600" height="900"><span class="svc-tag" data-i18n="filter.men">Men</span></div>
           <div class="svc-body">
             <h3 data-i18n="svc.panjabi">Panjabi &amp; Kediyam</h3>
             <p data-i18n="svc.panjabiDesc">Traditional men's wear stitched with a comfortable, sharp fit.</p>
@@ -252,7 +254,7 @@
           </div>
         </article>
         <article class="svc-card svc-olive" data-cat="men">
-          <div class="svc-img"><img src="images/work-02.jpg" srcset="images/sm/work-02.jpg 600w, images/work-02.jpg 900w" sizes="(max-width: 640px) 80vw, 350px" alt="" loading="lazy" width="900" height="1200"><span class="svc-tag" data-i18n="filter.men">Men</span></div>
+          <div class="svc-img"><img src="images/tool-chalk-pattern.jpg" alt="" loading="lazy" width="675" height="1200"><span class="svc-tag" data-i18n="filter.men">Men</span></div>
           <div class="svc-body">
             <h3 data-i18n="svc.pant">Pant &amp; Shirt</h3>
             <p data-i18n="svc.pantDesc">Formal and casual pant and shirt stitching, made to measure.</p>
@@ -260,7 +262,7 @@
           </div>
         </article>
         <article class="svc-card svc-teal" data-cat="uniform">
-          <div class="svc-img"><img src="images/work-10.jpg" alt="" loading="lazy" width="675" height="1200"><span class="svc-tag" data-i18n="tag.uniforms">Uniforms</span></div>
+          <div class="svc-img"><img src="images/sm/card-uniform-stock.jpg" alt="" loading="lazy" width="600" height="900"><span class="svc-tag" data-i18n="tag.uniforms">Uniforms</span></div>
           <div class="svc-body">
             <h3 data-i18n="svc.uniform">School &amp; Office Uniforms</h3>
             <p data-i18n="svc.uniformDesc">Uniform stitching in all models, for individuals and bulk orders from institutions.</p>
@@ -268,7 +270,7 @@
           </div>
         </article>
         <article class="svc-card svc-teal" data-cat="uniform">
-          <div class="svc-img"><img src="images/aari-02.jpg" srcset="images/sm/aari-02.jpg 600w, images/aari-02.jpg 1100w" sizes="(max-width: 640px) 80vw, 350px" alt="" loading="lazy" width="1100" height="825"><span class="svc-tag" data-i18n="tag.jackets">Jackets</span></div>
+          <div class="svc-img"><img src="images/aari-15.jpg" srcset="images/sm/aari-15.jpg 600w, images/aari-15.jpg 825w" sizes="(max-width: 640px) 80vw, 350px" alt="" loading="lazy" width="825" height="1100"><span class="svc-tag" data-i18n="tag.jackets">Jackets</span></div>
           <div class="svc-body">
             <h3 data-i18n="svc.embroidery">Embroidery Jackets</h3>
             <p data-i18n="svc.embroideryDesc">Hand-finished aari work and machine-embroidered jackets.</p>
@@ -276,7 +278,7 @@
           </div>
         </article>
         <article class="svc-card svc-teal" data-cat="uniform">
-          <div class="svc-img"><img src="images/design-10.jpg" srcset="images/sm/design-10.jpg 600w, images/design-10.jpg 1100w" sizes="(max-width: 640px) 80vw, 350px" alt="" loading="lazy" width="1100" height="825"><span class="svc-tag" data-i18n="tag.jackets">Jackets</span></div>
+          <div class="svc-img"><img src="images/design-07.jpg" alt="" loading="lazy" width="550" height="1100"><span class="svc-tag" data-i18n="tag.jackets">Jackets</span></div>
           <div class="svc-body">
             <h3 data-i18n="svc.model">Model Jackets</h3>
             <p data-i18n="svc.modelDesc">Model jackets in every design, cut and finished in-house.</p>
@@ -284,7 +286,7 @@
           </div>
         </article>
         <article class="svc-card svc-ink" data-cat="machine">
-          <div class="svc-img"><img src="images/tool-servo-motor.jpg" alt="" loading="lazy" width="675" height="1200"><span class="svc-tag" data-i18n="filter.machine">Machines</span></div>
+          <div class="svc-img"><img src="images/tool-embroidery-machine.jpg" srcset="images/sm/tool-embroidery-machine.jpg 600w, images/tool-embroidery-machine.jpg 726w" sizes="(max-width: 640px) 80vw, 350px" alt="" loading="lazy" width="726" height="946"><span class="svc-tag" data-i18n="filter.machine">Machines</span></div>
           <div class="svc-body">
             <h3 data-i18n="svc.newMachine">New Sewing Machines</h3>
             <p data-i18n="svc.newMachineDesc">New domestic and industrial sewing machines available at the shop.</p>
@@ -338,11 +340,11 @@
     </div>
     <div class="story-scroll" role="region" tabindex="0" data-i18n-aria="story.title" aria-label="From fabric to finished blouse">
     <ol class="story-track">
-      <li class="story-step"><figure><img src="images/story-1.jpg" srcset="images/sm/story-1.jpg 600w, images/story-1.jpg 825w" sizes="(max-width: 640px) 70vw, 290px" alt="" loading="lazy" width="825" height="1100"><figcaption><span class="story-n">1</span><span data-i18n="story.s1">Paper pattern laid on the fabric</span></figcaption></figure></li>
+      <li class="story-step"><figure><img src="images/story-1.jpg" srcset="images/sm/story-1.jpg 600w, images/story-1.jpg 825w" sizes="(max-width: 640px) 70vw, 290px" alt="" loading="lazy" width="825" height="990"><figcaption><span class="story-n">1</span><span data-i18n="story.s1">Paper pattern laid on the fabric</span></figcaption></figure></li>
       <li class="story-step"><figure><img src="images/story-2.jpg" srcset="images/sm/story-2.jpg 600w, images/story-2.jpg 825w" sizes="(max-width: 640px) 70vw, 290px" alt="" loading="lazy" width="825" height="1100"><figcaption><span class="story-n">2</span><span data-i18n="story.s2">Lining and interfacing cut to shape</span></figcaption></figure></li>
       <li class="story-step"><figure><img src="images/story-3.jpg" srcset="images/sm/story-3.jpg 600w, images/story-3.jpg 825w" sizes="(max-width: 640px) 70vw, 290px" alt="" loading="lazy" width="825" height="1100"><figcaption><span class="story-n">3</span><span data-i18n="story.s3">Embroidered neckline attached</span></figcaption></figure></li>
       <li class="story-step"><figure><img src="images/story-4.jpg" srcset="images/sm/story-4.jpg 600w, images/story-4.jpg 1100w" sizes="(max-width: 640px) 70vw, 290px" alt="" loading="lazy" width="1100" height="825"><figcaption><span class="story-n">4</span><span data-i18n="story.s4">Sleeve borders stitched</span></figcaption></figure></li>
-      <li class="story-step"><figure><img src="images/story-5.jpg" srcset="images/sm/story-5.jpg 600w, images/story-5.jpg 825w" sizes="(max-width: 640px) 70vw, 290px" alt="" loading="lazy" width="825" height="1100"><figcaption><span class="story-n">5</span><span data-i18n="story.s5">Neckline finished and pressed</span></figcaption></figure></li>
+      <li class="story-step"><figure><img src="images/story-5.jpg" srcset="images/sm/story-5.jpg 600w, images/story-5.jpg 743w" sizes="(max-width: 640px) 70vw, 290px" alt="" loading="lazy" width="743" height="968"><figcaption><span class="story-n">5</span><span data-i18n="story.s5">Neckline finished and pressed</span></figcaption></figure></li>
       <li class="story-step"><figure><img src="images/story-6.jpg" srcset="images/sm/story-6.jpg 600w, images/story-6.jpg 1100w" sizes="(max-width: 640px) 70vw, 290px" alt="" loading="lazy" width="1100" height="825"><figcaption><span class="story-n">6</span><span data-i18n="story.s6">Ready for the customer</span></figcaption></figure></li>
     </ol>
     </div>
@@ -380,57 +382,52 @@
       <button type="button" class="chip" data-gfilter="work" aria-pressed="false" data-i18n="gal.work">At Work</button>
       <button type="button" class="chip" data-gfilter="tools" aria-pressed="false" data-i18n="gal.tools">Tools &amp; Machines</button>
     </div>
-    <!-- To add photos: copy a <button class="g-item"> line, set data-cat (shop | work | tools | designs),
+    <!-- To add photos: copy a <button class="g-item"> line, set data-cat (designs | aari | shop | work | tools),
          data-caption-key (optional, from i18n) or data-caption, and the image src/size/alt. -->
     <div class="g-stage">
       <div class="g-mosaic" id="gGrid">
-        <button type="button" class="g-item" data-cat="designs" data-featured="1" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-01.jpg" srcset="images/sm/design-01.jpg 600w, images/design-01.jpg 937w" sizes="(max-width: 640px) 50vw, 25vw" width="937" height="1100" alt="Designer blouse" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="designs" data-hero="2" data-featured="1" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-02.jpg" srcset="images/sm/design-02.jpg 600w, images/design-02.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Designer blouse" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-03.jpg" srcset="images/sm/design-03.jpg 600w, images/design-03.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Designer blouse" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="designs" data-featured="1" data-caption-key="cap.neckPatch" data-caption="Patch-work neck design"><img src="images/design-04.jpg" srcset="images/sm/design-04.jpg 600w, images/design-04.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Patch-work neck design" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-01.jpg" srcset="images/sm/design-01.jpg 600w, images/design-01.jpg 937w" sizes="(max-width: 640px) 50vw, 25vw" width="937" height="1100" alt="Designer blouse" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-02.jpg" srcset="images/sm/design-02.jpg 600w, images/design-02.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Designer blouse" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-03.jpg" srcset="images/sm/design-03.jpg 600w, images/design-03.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Designer blouse" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.neckPatch" data-caption="Patch-work neck design"><img src="images/design-04.jpg" srcset="images/sm/design-04.jpg 600w, images/design-04.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Patch-work neck design" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.neckPatch" data-caption="Patch-work neck design"><img src="images/design-05.jpg" srcset="images/sm/design-05.jpg 600w, images/design-05.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Patch-work neck design" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.neckPatch" data-caption="Patch-work neck design"><img src="images/design-06.jpg" srcset="images/sm/design-06.jpg 600w, images/design-06.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Patch-work neck design" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.neckPatch" data-caption="Patch-work neck design"><img src="images/design-07.jpg" width="550" height="1100" alt="Patch-work neck design" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-08.jpg" srcset="images/sm/design-08.jpg 600w, images/design-08.jpg 1040w" sizes="(max-width: 640px) 50vw, 25vw" width="1040" height="780" alt="Designer blouse" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-09.jpg" srcset="images/sm/design-09.jpg 600w, images/design-09.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Designer blouse" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="designs" data-hero="4" data-featured="1" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-10.jpg" srcset="images/sm/design-10.jpg 600w, images/design-10.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Designer blouse" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.neckPatch" data-caption="Patch-work neck design"><img src="images/design-11.jpg" srcset="images/sm/design-11.jpg 600w, images/design-11.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Patch-work neck design" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="designs" data-featured="1" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-12.jpg" srcset="images/sm/design-12.jpg 600w, images/design-12.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="824" alt="Designer blouse" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-13.jpg" srcset="images/sm/design-13.jpg 600w, images/design-13.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Designer blouse" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.neckPatch" data-caption="Patch-work neck design"><img src="images/design-14.jpg" srcset="images/sm/design-14.jpg 600w, images/design-14.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Patch-work neck design" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="designs" data-hero="4" data-featured="1" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-09.jpg" srcset="images/sm/design-09.jpg 600w, images/design-09.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="935" alt="Designer blouse" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-10.jpg" srcset="images/sm/design-10.jpg 600w, images/design-10.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Designer blouse" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.neckPatch" data-caption="Patch-work neck design"><img src="images/design-11.jpg" srcset="images/sm/design-11.jpg 600w, images/design-11.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Patch-work neck design" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-12.jpg" srcset="images/sm/design-12.jpg 600w, images/design-12.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="824" alt="Designer blouse" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="designs" data-hero="2" data-featured="1" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-13.jpg" srcset="images/sm/design-13.jpg 600w, images/design-13.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="935" alt="Designer blouse" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.neckPatch" data-caption="Patch-work neck design"><img src="images/design-14.jpg" srcset="images/sm/design-14.jpg 600w, images/design-14.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Patch-work neck design" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.bow" data-caption="Back-neck bow design"><img src="images/design-15.jpg" srcset="images/sm/design-15.jpg 600w, images/design-15.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Back-neck bow design" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.neckPatch" data-caption="Patch-work neck design"><img src="images/design-16.jpg" srcset="images/sm/design-16.jpg 600w, images/design-16.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Patch-work neck design" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="designs" data-featured="1" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-17.jpg" srcset="images/sm/design-17.jpg 600w, images/design-17.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Designer blouse" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.neckPatch" data-caption="Patch-work neck design"><img src="images/design-16.jpg" srcset="images/sm/design-16.jpg 600w, images/design-16.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Patch-work neck design" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-17.jpg" srcset="images/sm/design-17.jpg 600w, images/design-17.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Designer blouse" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-18.jpg" srcset="images/sm/design-18.jpg 600w, images/design-18.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Designer blouse" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-19.jpg" srcset="images/sm/design-19.jpg 600w, images/design-19.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Designer blouse" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-20.jpg" srcset="images/sm/design-20.jpg 600w, images/design-20.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Designer blouse" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-21.jpg" srcset="images/sm/design-21.jpg 600w, images/design-21.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Designer blouse" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="designs" data-caption-key="cap.design" data-caption="Designer blouse"><img src="images/design-22.jpg" srcset="images/sm/design-22.jpg 600w, images/design-22.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Designer blouse" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="aari" data-hero="1" data-featured="1" data-caption-key="cap.aariBridal" data-caption="Bridal aari work"><img src="images/aari-01.jpg" srcset="images/sm/aari-01.jpg 600w, images/aari-01.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Bridal aari work" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="aari" data-hero="3" data-featured="1" data-caption-key="cap.aari" data-caption="Hand aari work"><img src="images/aari-02.jpg" srcset="images/sm/aari-02.jpg 600w, images/aari-02.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Hand aari work" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.embroidery" data-caption="Thread embroidery"><img src="images/aari-03.jpg" srcset="images/sm/aari-03.jpg 600w, images/aari-03.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Thread embroidery" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="aari" data-featured="1" data-caption-key="cap.aariBridal" data-caption="Bridal aari work"><img src="images/aari-04.jpg" srcset="images/sm/aari-04.jpg 600w, images/aari-04.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Bridal aari work" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="aari" data-featured="1" data-caption-key="cap.aariBridal" data-caption="Bridal aari work"><img src="images/aari-05.jpg" srcset="images/sm/aari-05.jpg 600w, images/aari-05.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Bridal aari work" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="aari" data-featured="1" data-caption-key="cap.aari" data-caption="Hand aari work"><img src="images/aari-06.jpg" srcset="images/sm/aari-06.jpg 600w, images/aari-06.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Hand aari work" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="aari" data-hero="5" data-featured="1" data-caption-key="cap.aari" data-caption="Hand aari work"><img src="images/aari-07.jpg" srcset="images/sm/aari-07.jpg 600w, images/aari-07.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Hand aari work" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.aari" data-caption="Hand aari work"><img src="images/aari-02.jpg" srcset="images/sm/aari-02.jpg 600w, images/aari-02.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Hand aari work" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.machineEmb" data-caption="Machine embroidery"><img src="images/aari-03.jpg" srcset="images/sm/aari-03.jpg 600w, images/aari-03.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Machine embroidery" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.aariBridal" data-caption="Bridal aari work"><img src="images/aari-04.jpg" srcset="images/sm/aari-04.jpg 600w, images/aari-04.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Bridal aari work" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.aariBridal" data-caption="Bridal aari work"><img src="images/aari-05.jpg" srcset="images/sm/aari-05.jpg 600w, images/aari-05.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Bridal aari work" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.aari" data-caption="Hand aari work"><img src="images/aari-06.jpg" srcset="images/sm/aari-06.jpg 600w, images/aari-06.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Hand aari work" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.aari" data-caption="Hand aari work"><img src="images/aari-07.jpg" srcset="images/sm/aari-07.jpg 600w, images/aari-07.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Hand aari work" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.aari" data-caption="Hand aari work"><img src="images/aari-08.jpg" srcset="images/sm/aari-08.jpg 600w, images/aari-08.jpg 1100w" sizes="(max-width: 640px) 50vw, 25vw" width="1100" height="825" alt="Hand aari work" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.embroidery" data-caption="Thread embroidery"><img src="images/aari-09.jpg" srcset="images/sm/aari-09.jpg 600w, images/aari-09.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Thread embroidery" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.embroidery" data-caption="Thread embroidery"><img src="images/aari-10.jpg" srcset="images/sm/aari-10.jpg 600w, images/aari-10.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Thread embroidery" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.aari" data-caption="Hand aari work"><img src="images/aari-11.jpg" srcset="images/sm/aari-11.jpg 600w, images/aari-11.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Hand aari work" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.aari" data-caption="Hand aari work"><img src="images/aari-12.jpg" srcset="images/sm/aari-12.jpg 600w, images/aari-12.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Hand aari work" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="aari" data-featured="1" data-caption-key="cap.embroidery" data-caption="Thread embroidery"><img src="images/aari-13.jpg" width="550" height="1100" alt="Thread embroidery" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="aari" data-hero="3" data-featured="1" data-caption-key="cap.embroidery" data-caption="Thread embroidery"><img src="images/aari-10.jpg" srcset="images/sm/aari-10.jpg 600w, images/aari-10.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="946" alt="Thread embroidery" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="aari" data-hero="5" data-featured="1" data-caption-key="cap.aari" data-caption="Hand aari work"><img src="images/aari-11.jpg" srcset="images/sm/aari-11.jpg 600w, images/aari-11.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Hand aari work" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.embroidery" data-caption="Thread embroidery"><img src="images/aari-13.jpg" width="550" height="946" alt="Thread embroidery" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.embroidery" data-caption="Thread embroidery"><img src="images/aari-14.jpg" width="550" height="1100" alt="Thread embroidery" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.embroidery" data-caption="Thread embroidery"><img src="images/aari-15.jpg" srcset="images/sm/aari-15.jpg 600w, images/aari-15.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Thread embroidery" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.aariBridal" data-caption="Bridal aari work"><img src="images/aari-16.jpg" srcset="images/sm/aari-16.jpg 600w, images/aari-16.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Bridal aari work" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.frame" data-caption="Aari work on the frame"><img src="images/aari-17.jpg" srcset="images/sm/aari-17.jpg 600w, images/aari-17.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Aari work on the frame" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.frame" data-caption="Aari work on the frame"><img src="images/aari-18.jpg" srcset="images/sm/aari-18.jpg 600w, images/aari-18.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Aari work on the frame" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="tools" data-caption-key="cap.embMachine" data-caption="Computer embroidery machine"><img src="images/tool-embroidery-machine.jpg" srcset="images/sm/tool-embroidery-machine.jpg 600w, images/tool-embroidery-machine.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Computer embroidery machine" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="tools" data-caption-key="cap.zari" data-caption="Zari threads for aari work"><img src="images/tool-zari-threads.jpg" srcset="images/sm/tool-zari-threads.jpg 600w, images/tool-zari-threads.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Zari threads for aari work" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="aari" data-hero="1" data-featured="1" data-caption-key="cap.embroidery" data-caption="Thread embroidery"><img src="images/aari-15.jpg" srcset="images/sm/aari-15.jpg 600w, images/aari-15.jpg 825w" sizes="(max-width: 640px) 50vw, 25vw" width="825" height="1100" alt="Thread embroidery" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="aari" data-caption-key="cap.frame" data-caption="Aari work on the frame"><img src="images/aari-18.jpg" srcset="images/sm/aari-18.jpg 600w, images/aari-18.jpg 709w" sizes="(max-width: 640px) 50vw, 25vw" width="709" height="1100" alt="Aari work on the frame" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="tools" data-caption-key="cap.embMachine" data-caption="Computer embroidery machine"><img src="images/tool-embroidery-machine.jpg" srcset="images/sm/tool-embroidery-machine.jpg 600w, images/tool-embroidery-machine.jpg 726w" sizes="(max-width: 640px) 50vw, 25vw" width="726" height="946" alt="Computer embroidery machine" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="tools" data-caption-key="cap.zari" data-caption="Zari threads for aari work"><img src="images/tool-zari-threads.jpg" srcset="images/sm/tool-zari-threads.jpg 600w, images/tool-zari-threads.jpg 742w" sizes="(max-width: 640px) 50vw, 25vw" width="742" height="880" alt="Zari threads for aari work" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="shop" data-caption-key="cap.cutting" data-caption="Cutting table"><img src="images/shop-cutting-table.jpg" srcset="images/sm/shop-cutting-table.jpg 600w, images/shop-cutting-table.jpg 1200w" sizes="(max-width: 640px) 50vw, 25vw" width="1200" height="900" alt="Cutting table with chalk-marked fabric and a pressing iron" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="shop" data-caption-key="cap.cuttingArea" data-caption="Cutting area"><img src="images/shop-floor-3.jpg" srcset="images/sm/shop-floor-3.jpg 600w, images/shop-floor-3.jpg 1200w" sizes="(max-width: 640px) 50vw, 25vw" width="1200" height="900" alt="Cutting table by the staircase" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="shop" data-caption-key="cap.inside" data-caption="Inside the shop"><img src="images/shop-floor-6.jpg" srcset="images/sm/shop-floor-6.jpg 600w, images/shop-floor-6.jpg 1200w" sizes="(max-width: 640px) 50vw, 25vw" width="1200" height="900" alt="Inside the shop with the cutting table in front" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="shop" data-caption-key="cap.sign" data-caption="Our signboard"><img src="images/shop-signboard.jpg" width="675" height="1200" alt="Shop signboard in Tamil listing services and phone number" loading="lazy"></button>
-        <button type="button" class="g-item" data-cat="shop" data-caption-key="cap.entrance" data-caption="Shop entrance"><img src="images/shop-front.jpg" srcset="images/sm/shop-front.jpg 600w, images/shop-front.jpg 900w" sizes="(max-width: 640px) 50vw, 25vw" width="900" height="1200" alt="Shop entrance with the Tamil signboard" loading="lazy"></button>
+        <button type="button" class="g-item" data-cat="shop" data-caption-key="cap.entrance" data-caption="Shop entrance"><img src="images/shop-front.jpg" width="630" height="900" alt="Shop entrance with the Tamil signboard" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="work" data-caption-key="cap.gents" data-caption="Gents stitching"><img src="images/work-02.jpg" srcset="images/sm/work-02.jpg 600w, images/work-02.jpg 900w" sizes="(max-width: 640px) 50vw, 25vw" width="900" height="1200" alt="Tailor stitching green fabric at the machine" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="work" data-caption-key="cap.hem" data-caption="Hemming"><img src="images/work-10.jpg" width="675" height="1200" alt="Close-up of hands hemming green fabric" loading="lazy"></button>
         <button type="button" class="g-item" data-cat="work" data-caption-key="cap.close" data-caption="Blouse, close up"><img src="images/work-11.jpg" width="675" height="1200" alt="Close-up of hands guiding a blouse under the needle" loading="lazy"></button>
@@ -503,7 +500,7 @@
           <p data-i18n="map.empty">The map for this branch will appear here once its address is added. Call or WhatsApp us for directions.</p>
           <a class="btn btn-ink" href="tel:+919789651814"><span data-i18n="nav.call">Call</span>&nbsp;97896 51814</a>
         </div>
-        <iframe id="mapFrame" title="Map showing the selected Sakthi Tailor branch" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" hidden></iframe>
+        <iframe id="mapFrame" title="Map of the selected Sakthi Tailor branch" data-i18n-title="map.frameTitle" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" hidden></iframe>
       </div>
     </div>
   </div>
@@ -516,7 +513,7 @@
       <h2 id="bookTitle" data-i18n="book.title">Order or book a service</h2>
       <p data-i18n="book.lead">Fill this in and it opens a ready-to-send WhatsApp message to the shop. Nothing is stored on this website.</p>
       <ul class="tick-list">
-        <li data-i18n="book.t1">Reply on WhatsApp, usually the same day</li>
+        <li data-i18n="book.t1">We reply on WhatsApp as soon as we can</li>
         <li data-i18n="book.t2">Send design photos straight in the chat</li>
         <li data-i18n="book.t3">Write in any language you like</li>
       </ul>
@@ -659,7 +656,7 @@
   <svg width="30" height="30" aria-hidden="true"><use href="#i-wa"/></svg>
 </a>
 
-<nav class="mobile-tabbar">
+<nav class="mobile-tabbar" data-i18n-aria="nav.quickLabel" aria-label="Quick links">
   <a href="#top"><svg width="20" height="20" aria-hidden="true"><use href="#i-up"/></svg><span data-i18n="tab.home">Home</span></a>
   <a href="#services"><svg width="20" height="20" aria-hidden="true"><use href="#i-grid"/></svg><span data-i18n="nav.services">Services</span></a>
   <a href="#branches"><svg width="20" height="20" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="tab.visit">Visit</span></a>
@@ -687,8 +684,8 @@
   <button type="button" class="lb-nav lb-next" id="lbNext" data-i18n-aria="ui.next" aria-label="Next photo">&rarr;</button>
 </div>
 
-<script src="config.js?v=22" defer></script>
-<script src="i18n.js?v=22" defer></script>
-<script src="script.js?v=22" defer></script>
+<script src="config.js?v=23" defer></script>
+<script src="i18n.js?v=23" defer></script>
+<script src="script.js?v=23" defer></script>
 </body>
 </html>

@@ -42,6 +42,7 @@
 
   function captureEnglish() {
     each("[data-i18n]", function (el) { english[el.getAttribute("data-i18n")] = el.textContent; });
+    each("[data-i18n-title]", function (el) { english[el.getAttribute("data-i18n-title")] = el.getAttribute("title"); });
     each("[data-i18n-aria]", function (el) { english[el.getAttribute("data-i18n-aria")] = english[el.getAttribute("data-i18n-aria")] || el.getAttribute("aria-label"); });
     each("[data-i18n-ph]", function (el) { english[el.getAttribute("data-i18n-ph")] = el.getAttribute("placeholder"); });
     each("[data-caption-key]", function (el) { english[el.getAttribute("data-caption-key")] = el.getAttribute("data-caption"); });
@@ -69,7 +70,11 @@
     each("[data-i18n]", function (el) {
       // textContent only: translations are never parsed as HTML
       el.textContent = t(el.getAttribute("data-i18n"));
+      // Inside an English-only block (legal pages), mark translated bits with their real language
+      var host = el.parentElement && el.parentElement.closest("[lang]");
+      if (host && host !== html) el.setAttribute("lang", current);
     });
+    each("[data-i18n-title]", function (el) { el.setAttribute("title", t(el.getAttribute("data-i18n-title"))); });
     each("[data-i18n-aria]", function (el) { el.setAttribute("aria-label", t(el.getAttribute("data-i18n-aria"))); });
     each("[data-i18n-ph]", function (el) { el.setAttribute("placeholder", t(el.getAttribute("data-i18n-ph"))); });
     each("[data-caption-key]", function (el) { el.setAttribute("data-caption", t(el.getAttribute("data-caption-key"))); });
@@ -92,18 +97,22 @@
     var s = document.createElement("script");
     s.src = "lang/" + code + ".js";
     s.onload = done;
-    s.onerror = function () { current = "en"; done(); };
+    s.onerror = function () { done(); };
     document.head.appendChild(s);
   }
 
+  var latest = null;
   function setLang(code, remember) {
     if (!find(code)) code = "en";
+    latest = code;
     loadFont(code);
     loadPack(code, function () {
-      current = packs[code] || code === "en" ? code : "en";
+      if (code !== latest) return;                 // a newer choice was made meanwhile
+      var ok = code === "en" || !!packs[code];
+      current = ok ? code : "en";
+      if (ok && remember) store(code);             // never remember a pack that failed to load
       apply();
     });
-    if (remember) store(code);
   }
 
   function buildPickers() {
@@ -121,7 +130,7 @@
   }
 
   function initialLang() {
-    var fromUrl = new URLSearchParams(window.location.search).get("lang");
+    var fromUrl = (new URLSearchParams(window.location.search).get("lang") || "").toLowerCase();
     if (fromUrl && find(fromUrl)) { store(fromUrl); return fromUrl; }
     var saved = stored();
     if (saved && find(saved)) return saved;

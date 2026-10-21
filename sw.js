@@ -7,7 +7,7 @@
 // Paths are relative to this file, so the site works on GitHub Pages'
 // /sakthi-tailor/ path or on a custom domain.
 
-const CACHE_NAME = "sakthi-tailor-v22";
+const CACHE_NAME = "sakthi-tailor-v23";
 const CORE_ASSETS = [
   "./",
   "index.html",
@@ -68,8 +68,13 @@ self.addEventListener("fetch", (event) => {
   const key = keyFor(url);
 
   if (req.destination === "image") {
+    // Stale-while-revalidate: show the saved photo instantly, refresh it in the
+    // background, so a photo replaced under the same name updates on the next view.
     event.respondWith(
-      caches.match(key).then((hit) => hit || fetch(req).then((res) => save(key, res)))
+      caches.match(key).then((hit) => {
+        const network = fetch(req, { cache: "no-cache" }).then((res) => save(key, res)).catch(() => hit);
+        return hit || network;
+      })
     );
     return;
   }

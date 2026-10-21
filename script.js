@@ -21,6 +21,9 @@
   function getConsent() { try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; } }
   function setConsent(v) { try { localStorage.setItem(CONSENT_KEY, v); } catch (e) { /* private mode */ } }
 
+  function isRtl() { return document.documentElement.dir === "rtl"; }
+  function smooth() { return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"; }
+
   function waLink(text) {
     return "https://wa.me/" + WHATSAPP_NUMBER + (text ? "?text=" + encodeURIComponent(text) : "");
   }
@@ -113,13 +116,8 @@
         var q = queryFor(b);
         if (q) dir.href = "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(q);
         else {
-          // No address yet: turn "Directions" into an honest "Call" button
-          dir.href = "tel:" + (b.phoneTel || SITE.phoneTel || "+919789651814").replace(/[^\d+]/g, "");
-          dir.removeAttribute("target");
-          var label = dir.querySelector("[data-i18n]");
-          if (label) { label.setAttribute("data-i18n", "nav.call"); label.textContent = t("nav.call", "Call"); }
-          var icon = dir.querySelector("use");
-          if (icon) icon.setAttribute("href", "#i-phone");
+          // No address yet: hide "Directions" (the phone number is already on the card)
+          dir.hidden = true;
         }
       }
 
@@ -131,6 +129,7 @@
     });
 
     function render() {
+      if (!frame || !emptyBox || !consentBox) return;
       var q = queryFor(branches[active]);
       emptyBox.hidden = true;
       consentBox.hidden = true;
@@ -223,6 +222,14 @@
         phoneEl.focus();
         return;
       }
+      if (date && dateInput && date < dateInput.min) {
+        statusEl.textContent = t("form.errDate", "Please choose today or a later date.");
+        statusEl.classList.add("is-error");
+        dateInput.setAttribute("aria-invalid", "true");
+        dateInput.focus();
+        return;
+      }
+      if (dateInput) dateInput.removeAttribute("aria-invalid");
       statusEl.classList.remove("is-error");
 
       // Build the message safely. encodeURIComponent escapes everything,
@@ -239,7 +246,7 @@
         t("wa.msgName", "Name") + ": " + name,
         t("wa.msgPhone", "Phone") + ": " + phone,
         t("wa.msgService", "Service") + ": " + serviceText + (inEnglish ? "" : " (" + serviceSel.value + ")"),
-        branchText ? t("wa.msgBranch", "Branch") + ": " + branchText : null,
+        branchText ? t("wa.msgBranch", "Branch") + ": " + branchText + (inEnglish ? "" : " (" + branchSel.value + ")") : null,
         date ? t("wa.msgDate", "Needed by") + ": " + date : null,
         message ? t("wa.msgDetails", "Details") + ": " + message : null
       ].filter(Boolean);
@@ -279,18 +286,21 @@
     var btn = document.getElementById("shareBtn");
     if (!btn) return;
     btn.addEventListener("click", function () {
-      var data = { title: document.title, text: t("soc.shareText", "Sakthi Tailor & Garments"), url: location.origin + location.pathname };
+      var data = { title: document.title, text: t("soc.shareText", "Sakthi Tailor & Garments — ladies & gents tailoring, uniforms and training."), url: location.origin + location.pathname };
       if (navigator.share) {
         navigator.share(data).catch(function () { /* user closed the sheet */ });
       } else if (navigator.clipboard) {
+        var shareOnWa = function () { window.open("https://wa.me/?text=" + encodeURIComponent(data.text + " " + data.url), "_blank", "noopener,noreferrer"); };
         navigator.clipboard.writeText(data.url).then(function () {
           var label = btn.querySelector("span");
-          var old = label.textContent;
+          if (!label) return;
+          if (!btn.dataset.label) btn.dataset.label = label.textContent;
           label.textContent = t("soc.copied", "Link copied to clipboard");
-          setTimeout(function () { label.textContent = old; }, 2200);
-        });
+          clearTimeout(btn._t);
+          btn._t = setTimeout(function () { label.textContent = btn.dataset.label; }, 2200);
+        }).catch(shareOnWa);
       } else {
-        window.open(waLink(data.text + " " + data.url).replace(WHATSAPP_NUMBER, ""), "_blank", "noopener,noreferrer");
+        window.open("https://wa.me/?text=" + encodeURIComponent(data.text + " " + data.url), "_blank", "noopener,noreferrer");
       }
     });
   }
@@ -389,7 +399,7 @@
         var f = tab.getAttribute("data-filter");
         pressChip(tabs, tab);
         cards.forEach(function (c) {
-          var show = f === "all" || c.getAttribute("data-cat").split(" ").indexOf(f) !== -1;
+          var show = f === "all" || (c.getAttribute("data-cat") || "").split(" ").indexOf(f) !== -1;
           c.hidden = !show;
         });
         track.scrollTo({ left: 0 });
@@ -397,8 +407,8 @@
       });
     });
 
-    if (prev) prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: "smooth" }); });
-    if (next) next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: "smooth" }); });
+    if (prev) prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: smooth() }); });
+    if (next) next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: smooth() }); });
     track.addEventListener("scroll", updateBar, { passive: true });
     window.addEventListener("resize", updateBar);
     updateBar();
@@ -445,7 +455,7 @@
       list = items.filter(inFilter);
       items.forEach(function (it) {
         it.hidden = true;
-        it.className = "g-item";
+        it.classList.remove("m1", "m2", "m3", "m4", "m5");
         it.setAttribute("aria-label", t("ui.photoOf", "View photo") + ": " + (it.getAttribute("data-caption") || ""));
       });
       var shown = previewSet();
@@ -532,7 +542,7 @@
       var it = list[current];
       var img = it.querySelector("img");
       lbImg.src = img.getAttribute("src");
-      lbImg.alt = img.getAttribute("alt") || "";
+      lbImg.alt = it.getAttribute("data-caption") || img.getAttribute("alt") || "";
       lbCap.textContent = it.getAttribute("data-caption") || "";
     }
     function openLightbox(i) {
@@ -563,7 +573,7 @@
     lb.addEventListener("touchend", function (e) {
       if (touchX === null) return;
       var dx = e.changedTouches[0].clientX - touchX;
-      if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+      if (Math.abs(dx) > 50) show(current + ((dx < 0) !== isRtl() ? 1 : -1));
       touchX = null;
     }, { passive: true });
 
@@ -577,8 +587,8 @@
     document.addEventListener("keydown", function (e) {
       if (!lb.hidden) {
         if (e.key === "Escape") closeLightbox();
-        else if (e.key === "ArrowLeft") show(current - 1);
-        else if (e.key === "ArrowRight") show(current + 1);
+        else if (e.key === "ArrowLeft") show(current + (isRtl() ? 1 : -1));
+        else if (e.key === "ArrowRight") show(current + (isRtl() ? -1 : 1));
         else if (e.key === "Tab") trapTab(e, lb);
       } else if (!tour.hidden) {
         if (e.key === "Escape") closeTour();
@@ -592,16 +602,11 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    initNav();
-    initSiteConfig();
-    initConsent();
-    initBranches();
-    initBookingForm();
-    initShare();
-    initServiceWorker();
-    initTilt();
-    initScrollReveal();
-    initServiceSlider();
-    initGallery();
+    // Reveal first, and isolate each feature, so one failure can never leave
+    // the animated sections invisible or break the rest of the page.
+    [initScrollReveal, initNav, initSiteConfig, initConsent, initBranches, initBookingForm,
+     initShare, initServiceWorker, initTilt, initServiceSlider, initGallery].forEach(function (fn) {
+      try { fn(); } catch (err) { if (window.console) console.error(err); }
+    });
   });
 })();
