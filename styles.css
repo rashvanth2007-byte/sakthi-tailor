@@ -313,8 +313,8 @@ html[dir="rtl"] .hero-training { background: linear-gradient(260deg, rgba(44,9,1
 .cat-card:hover .cat-cta { background: var(--accent); }
 .cat-maroon { --accent: var(--sindoor); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/design-12.jpg'); }
 .cat-olive  { --accent: #5d6b2f; background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/work-09.jpg'); }
-.cat-teal   { --accent: var(--peacock); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/work-10.jpg'); }
-.cat-brass  { --accent: var(--zari-text); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/train-album-1.jpg'); }
+.cat-teal   { --accent: var(--peacock); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/uniform-patterns.jpg'); background-position: center 45%; }
+.cat-brass  { --accent: var(--zari-text); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/train-notes-1.jpg'); background-position: center 20%; }
 @media (prefers-reduced-motion: no-preference) {
   .js #categories .cat-card { opacity: 0; translate: 0 70px; transition: opacity .7s var(--ease), translate .9s var(--ease), transform .15s ease-out, box-shadow .3s, outline-offset .3s; }
   .js #categories.is-visible .cat-card { opacity: 1; translate: 0 0; }
