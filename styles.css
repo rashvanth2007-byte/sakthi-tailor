@@ -311,10 +311,10 @@ html[dir="rtl"] .hero-training { background: linear-gradient(260deg, rgba(44,9,1
 .cat-sub { font-size: .95rem; color: rgba(255,255,255,.9); }
 .cat-cta { margin-top: 14px; width: fit-content; padding: 9px 18px; border-radius: 999px; font-size: .9rem; font-weight: 700; background: rgba(255,255,255,.16); border: 1px solid rgba(236,208,138,.6); transition: background .2s; }
 .cat-card:hover .cat-cta { background: var(--accent); }
-.cat-maroon { --accent: var(--sindoor); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/design-12.jpg'); }
-.cat-olive  { --accent: #5d6b2f; background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/work-09.jpg'); }
-.cat-teal   { --accent: var(--peacock); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/uniform-patterns.jpg'); background-position: center 45%; }
-.cat-brass  { --accent: var(--zari-text); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/train-notes-1.jpg'); background-position: center 20%; }
+.cat-maroon { --accent: var(--sindoor); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/card-women.jpg'); background-position: center 85%; }
+.cat-olive  { --accent: #5d6b2f; background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/card-men.jpg'); background-position: center 20%; }
+.cat-teal   { --accent: var(--peacock); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/card-uniform.jpg'); background-position: center 40%; }
+.cat-brass  { --accent: var(--zari-text); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/card-training.jpg'); background-position: center 30%; }
 @media (prefers-reduced-motion: no-preference) {
   .js #categories .cat-card { opacity: 0; translate: 0 70px; transition: opacity .7s var(--ease), translate .9s var(--ease), transform .15s ease-out, box-shadow .3s, outline-offset .3s; }
   .js #categories.is-visible .cat-card { opacity: 1; translate: 0 0; }
