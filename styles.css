@@ -445,34 +445,54 @@ html[dir="rtl"] .steps::before { transform-origin: right; }
 }
 
 /* ===================================================================
-   7 · Why us — leaf-framed photo; curtain wipe, then the list cascades
+   7 · Why us — the shop's design wall as a full-bleed background under a
+   wine veil; the photo settles into place, then the four points cascade
    =================================================================== */
-#why { background: var(--ivory); }
-.why-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(36px, 6vw, 90px); align-items: center; }
-.why-photo { position: relative; }
-.why-photo::before { content: ""; position: absolute; inset: 22px -22px -22px 22px; border: 2px solid var(--zari); border-radius: var(--leaf); }
-.why-photo img { position: relative; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 60% 30%; display: block; border-radius: var(--leaf); box-shadow: var(--shadow); }
-.why-list { list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 6px; counter-reset: why; }
-.why-list li { position: relative; padding: 18px 0 16px 58px; border-bottom: 1px dashed var(--line); }
-.why-list li:last-child { border-bottom: 0; }
-.why-list li::before { counter-increment: why; content: "0" counter(why); position: absolute; left: 0; top: 16px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.7rem; color: var(--zari-text); line-height: 1; }
-html[dir="rtl"] .why-list li { padding: 18px 58px 16px 0; }
-html[dir="rtl"] .why-list li::before { left: auto; right: 0; }
-.why-list h3 { font-size: 1.18rem; margin-bottom: 4px; }
-.why-list p { margin: 0; font-size: .98rem; }
-@media (prefers-reduced-motion: no-preference) {
-  .js #why .why-photo img { clip-path: inset(100% 0 0 0); transition: clip-path 1.2s var(--ease); }
-  .js #why .why-photo::before { opacity: 0; translate: -20px -20px; transition: opacity .8s .8s, translate .8s .8s var(--ease); }
-  .js #why.is-visible .why-photo img { clip-path: inset(0 0 0 0); }
-  .js #why.is-visible .why-photo::before { opacity: 1; translate: 0 0; }
-  .js #why .why-list li { opacity: 0; translate: 40px 0; transition: opacity .6s var(--ease), translate .7s var(--ease); }
-  .js #why.is-visible .why-list li { opacity: 1; translate: 0 0; }
-  .js #why.is-visible .why-list li:nth-child(1) { transition-delay: .4s; }
-  .js #why.is-visible .why-list li:nth-child(2) { transition-delay: .55s; }
-  .js #why.is-visible .why-list li:nth-child(3) { transition-delay: .7s; }
-  .js #why.is-visible .why-list li:nth-child(4) { transition-delay: .85s; }
+#why { position: relative; overflow: hidden; background: var(--wine-deep); color: #fff; padding: clamp(90px, 11vw, 150px) 0; }
+#why::before { /* the photo */
+  content: ""; position: absolute; inset: 0;
+  background: url('images/sm/shop-floor-7.jpg') 65% 30% / cover no-repeat;
 }
-@media (max-width: 860px) { .why-grid { grid-template-columns: 1fr; } .why-photo { max-width: 460px; margin: 0 auto 20px; } }
+@media (min-width: 861px) { #why::before { background-image: url('images/shop-floor-7.jpg'); } }
+#why::after { /* veil: strongest behind the text so every line stays readable */
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(100deg, rgba(44,9,16,.93) 0%, rgba(44,9,16,.82) 32%, rgba(44,9,16,.55) 70%, rgba(44,9,16,.5) 100%),
+    var(--kolam);
+}
+html[dir="rtl"] #why::after { background: linear-gradient(260deg, rgba(44,9,16,.93) 0%, rgba(44,9,16,.82) 32%, rgba(44,9,16,.55) 70%, rgba(44,9,16,.5) 100%), var(--kolam); }
+.why-grid { position: relative; z-index: 1; }
+#why .kicker { color: var(--zari-light); }
+#why h2 { color: #fff; max-width: 18ch; font-size: clamp(2.1rem, 4.4vw, 3.4rem); text-shadow: 0 2px 18px rgba(44,9,16,.8); }
+.why-list { list-style: none; padding: 0; margin: 34px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; counter-reset: why; }
+.why-list li {
+  position: relative; padding: 24px 24px 22px 74px; border-radius: var(--leaf-sm);
+  background: rgba(44, 9, 16, .66); border: 1px solid rgba(236, 208, 138, .4);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.why-list li::before { counter-increment: why; content: "0" counter(why); position: absolute; left: 22px; top: 22px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.8rem; color: var(--zari-light); line-height: 1; }
+html[dir="rtl"] .why-list li { padding: 24px 74px 22px 24px; }
+html[dir="rtl"] .why-list li::before { left: auto; right: 22px; }
+.why-list h3 { color: #fff; font-size: 1.22rem; margin-bottom: 6px; }
+.why-list p { margin: 0; font-size: 1rem; color: #f0dcdd; }
+@media (prefers-reduced-motion: no-preference) {
+  .js #why::before { scale: 1.12; transition: scale 2.2s var(--ease); }
+  .js #why.is-visible::before { scale: 1; }
+  .js #why h2, .js #why .kicker { opacity: 0; translate: 0 24px; transition: opacity .7s var(--ease), translate .8s var(--ease); }
+  .js #why.is-visible h2, .js #why.is-visible .kicker { opacity: 1; translate: 0 0; }
+  .js #why .why-list li { opacity: 0; translate: 0 40px; transition: opacity .6s var(--ease), translate .8s var(--ease); }
+  .js #why.is-visible .why-list li { opacity: 1; translate: 0 0; }
+  .js #why.is-visible .why-list li:nth-child(1) { transition-delay: .3s; }
+  .js #why.is-visible .why-list li:nth-child(2) { transition-delay: .42s; }
+  .js #why.is-visible .why-list li:nth-child(3) { transition-delay: .54s; }
+  .js #why.is-visible .why-list li:nth-child(4) { transition-delay: .66s; }
+}
+@media (max-width: 860px) {
+  .why-list { grid-template-columns: 1fr; }
+  /* phones: dark behind the heading at the top, lighter behind the backed cards */
+  #why::after { background: linear-gradient(180deg, rgba(44,9,16,.9) 0%, rgba(44,9,16,.85) 22%, rgba(44,9,16,.55) 45%, rgba(44,9,16,.5) 100%), var(--kolam); }
+  html[dir="rtl"] #why::after { background: linear-gradient(180deg, rgba(44,9,16,.9) 0%, rgba(44,9,16,.85) 22%, rgba(44,9,16,.55) 45%, rgba(44,9,16,.5) 100%), var(--kolam); }
+}
 
 /* ===================================================================
    8 · Gallery — deep wine silk; tiles come into focus
@@ -581,7 +601,6 @@ html[dir="rtl"] .g-showall { right: auto; left: 16px; }
   html[dir="rtl"].js #branches:not(.is-visible) .branch-card { translate: 60px 0; }
   html[dir="rtl"].js #branches:not(.is-visible) .map-panel { translate: -60px 0; rotate: -1.5deg; }
   html[dir="rtl"].js #booking:not(.is-visible) .booking-intro { translate: 40px 0; }
-  html[dir="rtl"].js #why:not(.is-visible) .why-list li { translate: -40px 0; }
 }
 @media (max-width: 900px) { .branch-layout { grid-template-columns: 1fr; } .map-panel { min-height: 360px; } }
 
