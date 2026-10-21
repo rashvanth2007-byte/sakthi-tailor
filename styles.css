@@ -311,7 +311,7 @@ html[dir="rtl"] .hero-training { background: linear-gradient(260deg, rgba(44,9,1
 .cat-sub { font-size: .95rem; color: rgba(255,255,255,.9); }
 .cat-cta { margin-top: 14px; width: fit-content; padding: 9px 18px; border-radius: 999px; font-size: .9rem; font-weight: 700; background: rgba(255,255,255,.16); border: 1px solid rgba(236,208,138,.6); transition: background .2s; }
 .cat-card:hover .cat-cta { background: var(--accent); }
-.cat-maroon { --accent: var(--sindoor); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/card-women.jpg'); background-position: center 45%; }
+.cat-maroon { --accent: var(--sindoor); background-image: linear-gradient(0deg, rgba(44,9,16,.94) 0%, rgba(44,9,16,.35) 48%, rgba(44,9,16,0) 75%), url('images/sm/card-women.jpg?v=22'); background-position: center 45%; }
 /* PLACEHOLDER stock photo until the shop sends its own men's-wear photo:
    "Traditional Clothing on Hanger" by viresh studio, Pexels License (free commercial use)
    https://www.pexels.com/photo/traditional-clothing-on-hanger-18016521/ */
