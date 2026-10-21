@@ -67,6 +67,8 @@ The site is published by GitHub Pages from the `main` branch root. Push to `main
 
 ## Still to fill in
 
+- Men's Tailoring card uses a **placeholder stock photo** (`images/card-men-stock.jpg`, "Traditional Clothing on Hanger" by viresh studio on Pexels, free licence). Replace it with a photo of the shop's own men's wear: set the `.cat-olive` background in `styles.css`.
+
 - Branch addresses, hours and map locations (`config.js`)
 - Instagram and Facebook page links (`config.js`)
 - Training course duration, timings and fees (`training.html`)
