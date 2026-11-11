@@ -48,7 +48,12 @@
       document.body.classList.toggle("nav-open", open);
     });
     links.addEventListener("click", function (e) { if (e.target.closest("a")) close(); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape" || toggle.getAttribute("aria-expanded") !== "true") return;
+      var inside = links.contains(document.activeElement);
+      close();
+      if (inside) toggle.focus();
+    });
 
     // Header shadow once the page scrolls
     var header = document.querySelector(".site-nav");
@@ -451,6 +456,7 @@
     var lb = document.getElementById("lightbox");
     var lbImg = document.getElementById("lbImg");
     var lbCap = document.getElementById("lbCap");
+    if (!tour || !lb || !tourGrid || !tourTabsWrap || !tourClose || !lbImg || !lbCap) return;
     var filter = "all";
     var list = [];          // every photo in the current filter (used by the full view and the lightbox)
     var current = 0;        // lightbox position inside `list`
