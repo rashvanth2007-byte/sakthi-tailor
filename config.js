@@ -26,6 +26,7 @@ window.SITE = {
     {
       address: "Attur Main Road, opp. Canara Bank, Namagiripettai, Rasipuram Tk, Namakkal Dt – 637406",
       hours: "",          // e.g. "Mon–Sat 9:30 AM – 8:30 PM · Sun 10 AM – 1 PM"
+      landmark: true,     // shows the "opposite Canara Bank" note under the address
       phoneDisplay: "97896 51814",
       phoneTel: "+919789651814",
       // Pin: Canara Bank on Attur Main Road (the shop is directly opposite). The shop has no

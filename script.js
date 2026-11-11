@@ -52,7 +52,13 @@
 
     // Header shadow once the page scrolls
     var header = document.querySelector(".site-nav");
-    function onScroll() { if (header) header.classList.toggle("is-scrolled", window.scrollY > 8); }
+    function onScroll() {
+      if (!header) return;
+      header.classList.toggle("is-scrolled", window.scrollY > 8);
+      // gold progress thread under the header
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      header.style.setProperty("--scroll", max > 0 ? Math.min(1, window.scrollY / max).toFixed(4) : 0);
+    }
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
   }
@@ -106,6 +112,8 @@
           el.textContent = pair[1];
         }
       });
+      var lm = card.querySelector('[data-field="landmark"]');
+      if (lm) lm.hidden = !b.landmark;
       var phone = card.querySelector('[data-field="phone"]');
       if (phone && b.phoneTel) {
         phone.href = "tel:" + b.phoneTel.replace(/[^\d+]/g, "");
@@ -336,6 +344,19 @@
         el.style.transform = "";
       });
     });
+  }
+
+  // ---- Hero collage: slight depth as the pointer moves (desktop only) ----
+  function initHeroDepth() {
+    var hero = document.querySelector(".hero");
+    var art = hero && hero.querySelector(".hero-art");
+    if (!art || !window.matchMedia("(pointer: fine)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    hero.addEventListener("mousemove", function (e) {
+      var r = hero.getBoundingClientRect();
+      art.style.setProperty("--px", ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+      art.style.setProperty("--py", ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+    });
+    hero.addEventListener("mouseleave", function () { art.style.setProperty("--px", 0); art.style.setProperty("--py", 0); });
   }
 
   // ---- Scroll reveal ----
@@ -605,7 +626,7 @@
     // Reveal first, and isolate each feature, so one failure can never leave
     // the animated sections invisible or break the rest of the page.
     [initScrollReveal, initNav, initSiteConfig, initConsent, initBranches, initBookingForm,
-     initShare, initServiceWorker, initTilt, initServiceSlider, initGallery].forEach(function (fn) {
+     initShare, initServiceWorker, initTilt, initHeroDepth, initServiceSlider, initGallery].forEach(function (fn) {
       try { fn(); } catch (err) { if (window.console) console.error(err); }
     });
   });

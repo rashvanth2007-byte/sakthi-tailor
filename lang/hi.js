@@ -284,5 +284,6 @@ window.SAKTHI_I18N.hi = {
   "form.errDate": "कृपया आज या आगे की तारीख चुनें।",
   "map.frameTitle": "चुनी गई शक्ति टेलर शाखा का नक्शा",
   "hero.ctaWork": "हमारा काम देखें",
-  "cap.machineEmb": "मशीन एम्ब्रॉयडरी"
+  "cap.machineEmb": "मशीन एम्ब्रॉयडरी",
+  "br.landmark": "केनरा बैंक के ठीक सामने"
 };

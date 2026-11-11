@@ -284,5 +284,6 @@ window.SAKTHI_I18N.kn = {
   "form.errDate": "ದಯವಿಟ್ಟು ಇಂದು ಅಥವಾ ನಂತರದ ದಿನಾಂಕ ಆಯ್ಕೆಮಾಡಿ.",
   "map.frameTitle": "ಆಯ್ಕೆ ಮಾಡಿದ ಶಕ್ತಿ ಟೈಲರ್ ಶಾಖೆಯ ನಕ್ಷೆ",
   "hero.ctaWork": "ನಮ್ಮ ಕೆಲಸ ನೋಡಿ",
-  "cap.machineEmb": "ಮೆಷಿನ್ ಎಂಬ್ರಾಯ್ಡರಿ"
+  "cap.machineEmb": "ಮೆಷಿನ್ ಎಂಬ್ರಾಯ್ಡರಿ",
+  "br.landmark": "ಕೆನರಾ ಬ್ಯಾಂಕ್ ಎದುರಿಗೆ"
 };

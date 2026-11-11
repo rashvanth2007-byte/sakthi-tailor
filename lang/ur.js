@@ -284,5 +284,6 @@ window.SAKTHI_I18N.ur = {
   "form.errDate": "براہ کرم آج یا بعد کی تاریخ منتخب کریں۔",
   "map.frameTitle": "منتخب شکتی ٹیلر برانچ کا نقشہ",
   "hero.ctaWork": "ہمارا کام دیکھیں",
-  "cap.machineEmb": "مشین ایمبرائیڈری"
+  "cap.machineEmb": "مشین ایمبرائیڈری",
+  "br.landmark": "کینرا بینک کے بالکل سامنے"
 };
