@@ -117,6 +117,7 @@
           el.textContent = pair[1];
         }
       });
+      if (b.hidden) { card.hidden = true; return; }   // branch switched off in config.js
       var lm = card.querySelector('[data-field="landmark"]');
       if (lm) lm.hidden = !b.landmark;
       var phone = card.querySelector('[data-field="phone"]');
@@ -197,6 +198,10 @@
     }
 
     // Today's date in the visitor's own time zone (toISOString would give the UTC date)
+    // Only one branch shown? Then there is nothing to choose in the form
+    var shown = (SITE.branches || []).filter(function (b) { return !b.hidden; }).length;
+    var branchField = document.getElementById("cbranch");
+    if (branchField && shown < 2) { branchField.selectedIndex = 0; branchField.closest(".field").hidden = true; }
     var dateInput = document.getElementById("cdate");
     if (dateInput) {
       var now = new Date();

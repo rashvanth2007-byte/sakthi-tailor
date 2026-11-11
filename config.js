@@ -35,6 +35,7 @@ window.SITE = {
       mapQuery: "Namagiripettai, Tamil Nadu 637406"
     },
     {
+      hidden: true,       // second branch is hidden on the site; set to false once its address is ready
       address: "",
       hours: "",
       phoneDisplay: "97896 51814",
