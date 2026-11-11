@@ -29,9 +29,10 @@ window.SITE = {
       landmark: true,     // shows the "opposite Canara Bank" note under the address
       phoneDisplay: "97896 51814",
       phoneTel: "+919789651814",
-      // Pin: Canara Bank on Attur Main Road (the shop is directly opposite). The shop has no
-      // Google Maps listing yet; once it has one, replace this with the listing's exact name.
-      mapQuery: "11.4559282,78.2617988"
+      // The shop has no Google Maps listing yet and the owner said the earlier bank pin was the
+      // wrong spot, so the map shows the town only. Replace with the exact pin ("lat,lng") or the
+      // listing's name once known.
+      mapQuery: "Namagiripettai, Tamil Nadu 637406"
     },
     {
       address: "",
