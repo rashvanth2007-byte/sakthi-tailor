@@ -69,7 +69,7 @@ The site is published by GitHub Pages from the `main` branch root. Push to `main
 - Uniform Specialist card uses a **placeholder stock photo** (`images/card-uniform-stock.jpg`, "White Shirts on the Hangers" by Pew Nguyen on Pexels, free licence). Replace it with a photo of the shop's own uniforms: set the `.cat-teal` background in `styles.css`.
 - Men's Tailoring card uses a **placeholder stock photo** (`images/card-men-stock.jpg`, "Traditional Clothing on Hanger" by viresh studio on Pexels, free licence). Replace it with a photo of the shop's own men's wear: set the `.cat-olive` background in `styles.css`.
 
-- Branch addresses, hours and map locations (`config.js`)
+- Second branch address, opening hours for both branches (`config.js`). The main branch map pin is the Canara Bank opposite the shop until the shop has its own Google Maps listing
 - Instagram and Facebook page links (`config.js`)
 - Training course duration, timings and fees (`training.html`)
 - Items marked "to be confirmed" in `terms.html`

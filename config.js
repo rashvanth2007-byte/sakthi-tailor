@@ -24,11 +24,13 @@ window.SITE = {
   // to everyone (Tamil + English together works well).
   branches: [
     {
-      address: "",
+      address: "Attur Main Road, opp. Canara Bank, Namagiripettai, Rasipuram Tk, Namakkal Dt – 637406",
       hours: "",          // e.g. "Mon–Sat 9:30 AM – 8:30 PM · Sun 10 AM – 1 PM"
       phoneDisplay: "97896 51814",
       phoneTel: "+919789651814",
-      mapQuery: ""
+      // Pin: Canara Bank on Attur Main Road (the shop is directly opposite). The shop has no
+      // Google Maps listing yet; once it has one, replace this with the listing's exact name.
+      mapQuery: "11.4559282,78.2617988"
     },
     {
       address: "",
